@@ -1,0 +1,5 @@
+server:
+  grpc:
+    addr: 0.0.0.0:9001
+    timeout: 30s
+db: host=localhost port=5438 user=me dbname=agents password=password sslmode=disable

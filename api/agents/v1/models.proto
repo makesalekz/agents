@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+package agents.v1;
+
+option go_package = "gitlab.calendaria.team/services/agents/api/agents/v1;agents_v1";
+
+message Route {
+  int64 id = 1;
+  int64 tenant_id = 2;
+  int64 agent_id = 3;
+  string date = 4;
+  string status = 5; // PLANNED, IN_PROGRESS, COMPLETED
+  repeated RoutePoint points = 6;
+  string created_at = 7;
+  string updated_at = 8;
+}
+
+message RoutePoint {
+  int64 id = 1;
+  int64 route_id = 2;
+  int64 store_tenant_id = 3;
+  int32 order_num = 4;
+  int64 visit_id = 5;
+  string created_at = 6;
+}
+
+message Visit {
+  int64 id = 1;
+  int64 tenant_id = 2;
+  int64 route_point_id = 3;
+  int64 agent_id = 4;
+  string checkin_lat = 5;
+  string checkin_lon = 6;
+  string checkin_at = 7;
+  string checkout_lat = 8;
+  string checkout_lon = 9;
+  string checkout_at = 10;
+  int64 duration_seconds = 11;
+  repeated VisitPhoto photos = 12;
+  string created_at = 13;
+}
+
+message VisitPhoto {
+  int64 id = 1;
+  int64 visit_id = 2;
+  string media_url = 3;
+  string created_at = 4;
+}
+
+message AgentReport {
+  int64 agent_id = 1;
+  string date_from = 2;
+  string date_to = 3;
+  int32 visits_count = 4;
+  int32 orders_count = 5;
+  int32 onboardings_count = 6;
+  int32 total_route_points = 7;
+  int32 completed_route_points = 8;
+  double route_completion_pct = 9;
+  int64 total_duration_seconds = 10;
+}

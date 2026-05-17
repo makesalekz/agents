@@ -1,0 +1,144 @@
+syntax = "proto3";
+
+package agents.v1;
+
+option go_package = "gitlab.calendaria.team/services/agents/api/agents/v1;agents_v1";
+
+import "api/agents/v1/models.proto";
+import "api/utils/v1/models.proto";
+
+service AgentsService {
+  // Story 6.1: Routes
+  rpc CreateRoute(CreateRouteRequest) returns (CreateRouteReply);
+  rpc GetRoute(GetRouteRequest) returns (GetRouteReply);
+  rpc ListRoutes(ListRoutesRequest) returns (ListRoutesReply);
+
+  // Story 6.2: GPS Visits
+  rpc CheckIn(CheckInRequest) returns (CheckInReply);
+  rpc CheckOut(CheckOutRequest) returns (CheckOutReply);
+  rpc ListVisits(ListVisitsRequest) returns (ListVisitsReply);
+
+  // Story 6.3: Photo Reports
+  rpc AddVisitPhoto(AddVisitPhotoRequest) returns (AddVisitPhotoReply);
+  rpc GetVisitPhotos(GetVisitPhotosRequest) returns (GetVisitPhotosReply);
+
+  // Story 6.4: New Store Onboarding
+  rpc OnboardStore(OnboardStoreRequest) returns (OnboardStoreReply);
+
+  // Story 6.5: Agent Reports
+  rpc GetAgentReport(GetAgentReportRequest) returns (GetAgentReportReply);
+}
+
+// --- Story 6.1: Routes ---
+
+message CreateRouteRequest {
+  int64 agent_id = 1;
+  string date = 2; // YYYY-MM-DD
+  repeated RoutePointInput points = 3;
+}
+
+message RoutePointInput {
+  int64 store_tenant_id = 1;
+  int32 order_num = 2;
+}
+
+message CreateRouteReply {
+  Route route = 1;
+}
+
+message GetRouteRequest {
+  int64 id = 1;
+}
+
+message GetRouteReply {
+  Route route = 1;
+}
+
+message ListRoutesRequest {
+  int64 agent_id = 1;
+  string date = 2;
+  string status = 3;
+  utils.v1.PaginateRequest paginate = 4;
+}
+
+message ListRoutesReply {
+  repeated Route items = 1;
+  utils.v1.PaginateReply paginate = 2;
+}
+
+// --- Story 6.2: GPS Visits ---
+
+message CheckInRequest {
+  int64 route_point_id = 1;
+  string lat = 2;
+  string lon = 3;
+}
+
+message CheckInReply {
+  Visit visit = 1;
+}
+
+message CheckOutRequest {
+  int64 route_point_id = 1;
+  string lat = 2;
+  string lon = 3;
+}
+
+message CheckOutReply {
+  Visit visit = 1;
+}
+
+message ListVisitsRequest {
+  int64 agent_id = 1;
+  string date_from = 2;
+  string date_to = 3;
+  utils.v1.PaginateRequest paginate = 4;
+}
+
+message ListVisitsReply {
+  repeated Visit items = 1;
+  utils.v1.PaginateReply paginate = 2;
+}
+
+// --- Story 6.3: Photo Reports ---
+
+message AddVisitPhotoRequest {
+  int64 visit_id = 1;
+  string media_url = 2;
+}
+
+message AddVisitPhotoReply {
+  VisitPhoto photo = 1;
+}
+
+message GetVisitPhotosRequest {
+  int64 visit_id = 1;
+}
+
+message GetVisitPhotosReply {
+  repeated VisitPhoto items = 1;
+}
+
+// --- Story 6.4: New Store Onboarding ---
+
+message OnboardStoreRequest {
+  string store_name = 1;
+  string owner_phone = 2;
+  bytes products_file = 3;
+}
+
+message OnboardStoreReply {
+  int64 new_tenant_id = 1;
+}
+
+// --- Story 6.5: Agent Reports ---
+
+message GetAgentReportRequest {
+  int64 agent_id = 1;
+  string date_from = 2;
+  string date_to = 3;
+}
+
+message GetAgentReportReply {
+  AgentReport report = 1;
+}
