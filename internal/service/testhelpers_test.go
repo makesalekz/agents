@@ -10,6 +10,7 @@ import (
 	"gitlab.calendaria.team/services/agents/ent/enum"
 	"gitlab.calendaria.team/services/agents/internal/biz"
 	"gitlab.calendaria.team/services/agents/internal/data"
+	stores_v1 "gitlab.calendaria.team/services/stores/api/stores/v1"
 	utils_v1 "gitlab.calendaria.team/services/utils/api/utils/v1"
 	"gitlab.calendaria.team/services/utils/v2/auth"
 
@@ -389,6 +390,18 @@ func (m *mockOnboardingsRepo) CountByAgentAndDateRange(_ context.Context, tenant
 	return count, nil
 }
 
+// --- Mock StoresClient ---
+
+type mockStoresClient struct{}
+
+func (m *mockStoresClient) GetStore(_ context.Context, _ int64) (*stores_v1.Store, error) {
+	return &stores_v1.Store{}, nil
+}
+
+func (m *mockStoresClient) ValidateProximity(_ context.Context, _ int64, _, _ float64) (bool, error) {
+	return true, nil // Always allow in tests
+}
+
 // --- Test setup ---
 
 func setupService() (*AgentsService, *mockRoutesRepo, *mockVisitsRepo, *mockVisitPhotosRepo, *mockOnboardingsRepo) {
@@ -396,7 +409,7 @@ func setupService() (*AgentsService, *mockRoutesRepo, *mockVisitsRepo, *mockVisi
 	visitsRepo := newMockVisitsRepo()
 	photosRepo := newMockVisitPhotosRepo()
 	onboardingsRepo := newMockOnboardingsRepo()
-	uc := biz.NewAgentsUsecase(log.DefaultLogger, routesRepo, visitsRepo, photosRepo, onboardingsRepo)
+	uc := biz.NewAgentsUsecase(log.DefaultLogger, routesRepo, visitsRepo, photosRepo, onboardingsRepo, &mockStoresClient{})
 	svc := NewAgentsService(uc)
 	return svc, routesRepo, visitsRepo, photosRepo, onboardingsRepo
 }

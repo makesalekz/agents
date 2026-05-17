@@ -27,12 +27,13 @@ func (s *stubTenantsClient) CreateTenant(_ context.Context, _, _ string) (int64,
 }
 
 type AgentsUsecase struct {
-	log            *log.Helper
-	routesRepo     data.RoutesRepo
-	visitsRepo     data.VisitsRepo
-	photosRepo     data.VisitPhotosRepo
+	log             *log.Helper
+	routesRepo      data.RoutesRepo
+	visitsRepo      data.VisitsRepo
+	photosRepo      data.VisitPhotosRepo
 	onboardingsRepo data.OnboardingsRepo
-	tenantsClient  TenantsClient
+	tenantsClient   TenantsClient
+	storesClient    data.StoresClient
 }
 
 func NewAgentsUsecase(
@@ -41,14 +42,16 @@ func NewAgentsUsecase(
 	visitsRepo data.VisitsRepo,
 	photosRepo data.VisitPhotosRepo,
 	onboardingsRepo data.OnboardingsRepo,
+	storesClient data.StoresClient,
 ) *AgentsUsecase {
 	return &AgentsUsecase{
-		log:            log.NewHelper(logger),
-		routesRepo:     routesRepo,
-		visitsRepo:     visitsRepo,
-		photosRepo:     photosRepo,
+		log:             log.NewHelper(logger),
+		routesRepo:      routesRepo,
+		visitsRepo:      visitsRepo,
+		photosRepo:      photosRepo,
 		onboardingsRepo: onboardingsRepo,
-		tenantsClient:  &stubTenantsClient{},
+		tenantsClient:   &stubTenantsClient{},
+		storesClient:    storesClient,
 	}
 }
 
@@ -96,6 +99,19 @@ func (uc *AgentsUsecase) CheckIn(ctx context.Context, tenantID int64, routePoint
 	// Verify the route belongs to this tenant
 	if point.Edges.Route != nil && point.Edges.Route.TenantID != tenantID {
 		return nil, fmt.Errorf("route point not found")
+	}
+
+	// Validate proximity to store (Story 10.4)
+	if point.StoreTenantID != 0 && uc.storesClient != nil {
+		agentLat, _ := lat.Float64()
+		agentLon, _ := lon.Float64()
+		ok, err := uc.storesClient.ValidateProximity(ctx, point.StoreTenantID, agentLat, agentLon)
+		if err != nil {
+			uc.log.Warnf("failed to validate proximity for store %d: %v", point.StoreTenantID, err)
+			// Don't block check-in on service failure
+		} else if !ok {
+			return nil, fmt.Errorf("agent is too far from the store (must be within 200m)")
+		}
 	}
 
 	// Check if already checked in

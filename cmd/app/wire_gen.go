@@ -31,11 +31,19 @@ func wireApp(bootstrap *conf.Bootstrap, logger log.Logger) (*kratos.App, func(),
 	visitsRepo := data.NewVisitsRepo(dataData)
 	visitPhotosRepo := data.NewVisitPhotosRepo(dataData)
 	onboardingsRepo := data.NewOnboardingsRepo(dataData)
-	agentsUsecase := biz.NewAgentsUsecase(logger, routesRepo, visitsRepo, visitPhotosRepo, onboardingsRepo)
+
+	storesClient, storesCleanup, err := data.NewStoresClientFromConf(bootstrap, logger)
+	if err != nil {
+		cleanup()
+		return nil, nil, err
+	}
+
+	agentsUsecase := biz.NewAgentsUsecase(logger, routesRepo, visitsRepo, visitPhotosRepo, onboardingsRepo, storesClient)
 	agentsService := service.NewAgentsService(agentsUsecase)
 	grpcServer := server.NewGRPCServer(bootstrap, agentsService)
 	app := newApp(logger, grpcServer)
 	return app, func() {
+		storesCleanup()
 		cleanup()
 	}, nil
 }
