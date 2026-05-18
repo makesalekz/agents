@@ -7,8 +7,8 @@ require (
 	github.com/go-kratos/kratos/v2 v2.7.3
 	github.com/google/wire v0.7.0
 	github.com/lib/pq v1.10.9
-	github.com/makesalekz/stores v0.0.0-00010101000000-000000000000
-	github.com/makesalekz/utils v0.3.21
+	github.com/makesalekz/stores v1.99.0
+	github.com/makesalekz/utils v0.4.0
 	github.com/shopspring/decimal v1.3.1
 	github.com/stretchr/testify v1.11.1
 	go.uber.org/automaxprocs v1.6.0
@@ -50,7 +50,3 @@ require (
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20240528184218-531527333157 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
-
-replace github.com/makesalekz/utils => ../utils
-
-replace github.com/makesalekz/stores => ../stores

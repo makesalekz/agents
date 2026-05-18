@@ -1,5 +1,5 @@
 server:
   grpc:
-    addr: 0.0.0.0:9001
+    addr: 0.0.0.0:9000
     timeout: 30s
-db: host=localhost port=5438 user=me dbname=agents password=password sslmode=disable
+db: host=postgres_db port=5432 user=umag dbname=agents password=umag_secret_2026 sslmode=disable
