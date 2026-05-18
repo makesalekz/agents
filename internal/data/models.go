@@ -5,7 +5,7 @@ import (
 
 	"github.com/shopspring/decimal"
 
-	"gitlab.calendaria.team/services/agents/ent/enum"
+	"github.com/makesalekz/agents/ent/enum"
 )
 
 type RouteDto struct {

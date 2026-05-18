@@ -4,8 +4,8 @@ import (
 	"context"
 	"math"
 
-	"gitlab.calendaria.team/services/agents/internal/conf"
-	stores_v1 "gitlab.calendaria.team/services/stores/api/stores/v1"
+	"github.com/makesalekz/agents/internal/conf"
+	stores_v1 "github.com/makesalekz/stores/api/stores/v1"
 
 	"github.com/go-kratos/kratos/v2/log"
 	"google.golang.org/grpc"

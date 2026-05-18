@@ -7,7 +7,7 @@
 package stores_v1
 
 import (
-	v1 "gitlab.calendaria.team/services/utils/api/utils/v1"
+	v1 "github.com/makesalekz/utils/api/utils/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -668,7 +668,7 @@ const file_api_stores_v1_stores_proto_rawDesc = "" +
 	"ListStores\x12\x1c.stores.v1.ListStoresRequest\x1a\x1a.stores.v1.ListStoresReply\x12S\n" +
 	"\x13SetStoreResponsible\x12%.stores.v1.SetStoreResponsibleRequest\x1a\x15.stores.v1.StoreReply\x12j\n" +
 	"\x16GetStoresByCoordinates\x12(.stores.v1.GetStoresByCoordinatesRequest\x1a&.stores.v1.GetStoresByCoordinatesReplyBM\n" +
-	"\tstores.v1P\x01Z>gitlab.calendaria.team/services/stores/api/stores/v1;stores_v1b\x06proto3"
+	"\tstores.v1P\x01Z>github.com/makesalekz/stores/api/stores/v1;stores_v1b\x06proto3"
 
 var (
 	file_api_stores_v1_stores_proto_rawDescOnce sync.Once

@@ -4,11 +4,11 @@ import (
 	"context"
 	"time"
 
-	"gitlab.calendaria.team/services/agents/ent"
-	"gitlab.calendaria.team/services/agents/ent/enum"
-	"gitlab.calendaria.team/services/agents/ent/route"
-	"gitlab.calendaria.team/services/agents/ent/routepoint"
-	utils_v1 "gitlab.calendaria.team/services/utils/api/utils/v1"
+	"github.com/makesalekz/agents/ent"
+	"github.com/makesalekz/agents/ent/enum"
+	"github.com/makesalekz/agents/ent/route"
+	"github.com/makesalekz/agents/ent/routepoint"
+	utils_v1 "github.com/makesalekz/utils/api/utils/v1"
 )
 
 type RoutesRepo interface {

@@ -9,11 +9,11 @@ package main
 import (
 	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/log"
-	"gitlab.calendaria.team/services/agents/internal/biz"
-	"gitlab.calendaria.team/services/agents/internal/conf"
-	"gitlab.calendaria.team/services/agents/internal/data"
-	"gitlab.calendaria.team/services/agents/internal/server"
-	"gitlab.calendaria.team/services/agents/internal/service"
+	"github.com/makesalekz/agents/internal/biz"
+	"github.com/makesalekz/agents/internal/conf"
+	"github.com/makesalekz/agents/internal/data"
+	"github.com/makesalekz/agents/internal/server"
+	"github.com/makesalekz/agents/internal/service"
 )
 
 import (

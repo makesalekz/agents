@@ -592,7 +592,7 @@ const file_api_agents_v1_models_proto_rawDesc = "" +
 	"\x16completed_route_points\x18\b \x01(\x05R\x14completedRoutePoints\x120\n" +
 	"\x14route_completion_pct\x18\t \x01(\x01R\x12routeCompletionPct\x124\n" +
 	"\x16total_duration_seconds\x18\n" +
-	" \x01(\x03R\x14totalDurationSecondsB@Z>gitlab.calendaria.team/services/agents/api/agents/v1;agents_v1b\x06proto3"
+	" \x01(\x03R\x14totalDurationSecondsB@Z>github.com/makesalekz/agents/api/agents/v1;agents_v1b\x06proto3"
 
 var (
 	file_api_agents_v1_models_proto_rawDescOnce sync.Once

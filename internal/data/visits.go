@@ -4,9 +4,9 @@ import (
 	"context"
 	"time"
 
-	"gitlab.calendaria.team/services/agents/ent"
-	"gitlab.calendaria.team/services/agents/ent/visit"
-	utils_v1 "gitlab.calendaria.team/services/utils/api/utils/v1"
+	"github.com/makesalekz/agents/ent"
+	"github.com/makesalekz/agents/ent/visit"
+	utils_v1 "github.com/makesalekz/utils/api/utils/v1"
 
 	"github.com/shopspring/decimal"
 )

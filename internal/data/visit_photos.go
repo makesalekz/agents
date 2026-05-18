@@ -3,8 +3,8 @@ package data
 import (
 	"context"
 
-	"gitlab.calendaria.team/services/agents/ent"
-	"gitlab.calendaria.team/services/agents/ent/visitphoto"
+	"github.com/makesalekz/agents/ent"
+	"github.com/makesalekz/agents/ent/visitphoto"
 )
 
 type VisitPhotosRepo interface {

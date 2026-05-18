@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
-	"gitlab.calendaria.team/services/agents/ent"
-	"gitlab.calendaria.team/services/agents/ent/onboarding"
+	"github.com/makesalekz/agents/ent"
+	"github.com/makesalekz/agents/ent/onboarding"
 )
 
 type OnboardingsRepo interface {

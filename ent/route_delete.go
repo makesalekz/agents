@@ -8,8 +8,8 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"gitlab.calendaria.team/services/agents/ent/predicate"
-	"gitlab.calendaria.team/services/agents/ent/route"
+	"github.com/makesalekz/agents/ent/predicate"
+	"github.com/makesalekz/agents/ent/route"
 )
 
 // RouteDelete is the builder for deleting a Route entity.

@@ -9,8 +9,8 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"gitlab.calendaria.team/services/agents/ent/enum"
-	"gitlab.calendaria.team/services/agents/ent/route"
+	"github.com/makesalekz/agents/ent/enum"
+	"github.com/makesalekz/agents/ent/route"
 )
 
 // Route is the model entity for the Route schema.

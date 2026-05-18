@@ -7,7 +7,7 @@
 package agents_v1
 
 import (
-	v1 "gitlab.calendaria.team/services/utils/api/utils/v1"
+	v1 "github.com/makesalekz/utils/api/utils/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -1187,7 +1187,7 @@ const file_api_agents_v1_agents_proto_rawDesc = "" +
 	"\rAddVisitPhoto\x12\x1f.agents.v1.AddVisitPhotoRequest\x1a\x1d.agents.v1.AddVisitPhotoReply\x12R\n" +
 	"\x0eGetVisitPhotos\x12 .agents.v1.GetVisitPhotosRequest\x1a\x1e.agents.v1.GetVisitPhotosReply\x12L\n" +
 	"\fOnboardStore\x12\x1e.agents.v1.OnboardStoreRequest\x1a\x1c.agents.v1.OnboardStoreReply\x12R\n" +
-	"\x0eGetAgentReport\x12 .agents.v1.GetAgentReportRequest\x1a\x1e.agents.v1.GetAgentReportReplyB@Z>gitlab.calendaria.team/services/agents/api/agents/v1;agents_v1b\x06proto3"
+	"\x0eGetAgentReport\x12 .agents.v1.GetAgentReportRequest\x1a\x1e.agents.v1.GetAgentReportReplyB@Z>github.com/makesalekz/agents/api/agents/v1;agents_v1b\x06proto3"
 
 var (
 	file_api_agents_v1_agents_proto_rawDescOnce sync.Once

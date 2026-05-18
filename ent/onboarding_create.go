@@ -11,7 +11,7 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"gitlab.calendaria.team/services/agents/ent/onboarding"
+	"github.com/makesalekz/agents/ent/onboarding"
 )
 
 // OnboardingCreate is the builder for creating a Onboarding entity.

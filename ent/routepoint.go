@@ -9,8 +9,8 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"gitlab.calendaria.team/services/agents/ent/route"
-	"gitlab.calendaria.team/services/agents/ent/routepoint"
+	"github.com/makesalekz/agents/ent/route"
+	"github.com/makesalekz/agents/ent/routepoint"
 )
 
 // RoutePoint is the model entity for the RoutePoint schema.

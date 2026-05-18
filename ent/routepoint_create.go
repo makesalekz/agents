@@ -11,8 +11,8 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"gitlab.calendaria.team/services/agents/ent/route"
-	"gitlab.calendaria.team/services/agents/ent/routepoint"
+	"github.com/makesalekz/agents/ent/route"
+	"github.com/makesalekz/agents/ent/routepoint"
 )
 
 // RoutePointCreate is the builder for creating a RoutePoint entity.

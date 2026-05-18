@@ -9,7 +9,7 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"gitlab.calendaria.team/services/agents/ent/onboarding"
+	"github.com/makesalekz/agents/ent/onboarding"
 )
 
 // Onboarding is the model entity for the Onboarding schema.

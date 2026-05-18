@@ -8,8 +8,8 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"gitlab.calendaria.team/services/agents/ent/predicate"
-	"gitlab.calendaria.team/services/agents/ent/routepoint"
+	"github.com/makesalekz/agents/ent/predicate"
+	"github.com/makesalekz/agents/ent/routepoint"
 )
 
 // RoutePointDelete is the builder for deleting a RoutePoint entity.

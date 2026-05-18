@@ -6,7 +6,7 @@ import (
 	"context"
 	"fmt"
 
-	"gitlab.calendaria.team/services/agents/ent"
+	"github.com/makesalekz/agents/ent"
 )
 
 // The OnboardingFunc type is an adapter to allow the use of ordinary

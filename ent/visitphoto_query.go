@@ -11,9 +11,9 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"gitlab.calendaria.team/services/agents/ent/predicate"
-	"gitlab.calendaria.team/services/agents/ent/visit"
-	"gitlab.calendaria.team/services/agents/ent/visitphoto"
+	"github.com/makesalekz/agents/ent/predicate"
+	"github.com/makesalekz/agents/ent/visit"
+	"github.com/makesalekz/agents/ent/visitphoto"
 )
 
 // VisitPhotoQuery is the builder for querying VisitPhoto entities.

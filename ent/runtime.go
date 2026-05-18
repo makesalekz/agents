@@ -5,12 +5,12 @@ package ent
 import (
 	"time"
 
-	"gitlab.calendaria.team/services/agents/ent/onboarding"
-	"gitlab.calendaria.team/services/agents/ent/route"
-	"gitlab.calendaria.team/services/agents/ent/routepoint"
-	"gitlab.calendaria.team/services/agents/ent/schema"
-	"gitlab.calendaria.team/services/agents/ent/visit"
-	"gitlab.calendaria.team/services/agents/ent/visitphoto"
+	"github.com/makesalekz/agents/ent/onboarding"
+	"github.com/makesalekz/agents/ent/route"
+	"github.com/makesalekz/agents/ent/routepoint"
+	"github.com/makesalekz/agents/ent/schema"
+	"github.com/makesalekz/agents/ent/visit"
+	"github.com/makesalekz/agents/ent/visitphoto"
 )
 
 // The init function reads all schema descriptors with runtime code

@@ -9,17 +9,17 @@ import (
 	"log"
 	"reflect"
 
-	"gitlab.calendaria.team/services/agents/ent/migrate"
+	"github.com/makesalekz/agents/ent/migrate"
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect"
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
-	"gitlab.calendaria.team/services/agents/ent/onboarding"
-	"gitlab.calendaria.team/services/agents/ent/route"
-	"gitlab.calendaria.team/services/agents/ent/routepoint"
-	"gitlab.calendaria.team/services/agents/ent/visit"
-	"gitlab.calendaria.team/services/agents/ent/visitphoto"
+	"github.com/makesalekz/agents/ent/onboarding"
+	"github.com/makesalekz/agents/ent/route"
+	"github.com/makesalekz/agents/ent/routepoint"
+	"github.com/makesalekz/agents/ent/visit"
+	"github.com/makesalekz/agents/ent/visitphoto"
 )
 
 // Client is the client that holds all ent builders.

@@ -1,8 +1,8 @@
 package schema
 
 import (
-	"gitlab.calendaria.team/services/agents/ent/enum"
-	"gitlab.calendaria.team/services/agents/ent/mixins"
+	"github.com/makesalekz/agents/ent/enum"
+	"github.com/makesalekz/agents/ent/mixins"
 
 	"entgo.io/ent"
 	"entgo.io/ent/schema/edge"

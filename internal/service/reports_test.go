@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	v1 "gitlab.calendaria.team/services/agents/api/agents/v1"
+	v1 "github.com/makesalekz/agents/api/agents/v1"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

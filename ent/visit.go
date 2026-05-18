@@ -10,7 +10,7 @@ import (
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
 	"github.com/shopspring/decimal"
-	"gitlab.calendaria.team/services/agents/ent/visit"
+	"github.com/makesalekz/agents/ent/visit"
 )
 
 // Visit is the model entity for the Visit schema.

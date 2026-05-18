@@ -8,8 +8,8 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"gitlab.calendaria.team/services/agents/ent/onboarding"
-	"gitlab.calendaria.team/services/agents/ent/predicate"
+	"github.com/makesalekz/agents/ent/onboarding"
+	"github.com/makesalekz/agents/ent/predicate"
 )
 
 // OnboardingDelete is the builder for deleting a Onboarding entity.

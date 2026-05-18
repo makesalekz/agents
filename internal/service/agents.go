@@ -4,12 +4,12 @@ import (
 	"context"
 	"time"
 
-	v1 "gitlab.calendaria.team/services/agents/api/agents/v1"
-	"gitlab.calendaria.team/services/agents/ent"
-	"gitlab.calendaria.team/services/agents/internal/biz"
-	"gitlab.calendaria.team/services/agents/internal/data"
-	utils_v1 "gitlab.calendaria.team/services/utils/api/utils/v1"
-	"gitlab.calendaria.team/services/utils/v2/auth"
+	v1 "github.com/makesalekz/agents/api/agents/v1"
+	"github.com/makesalekz/agents/ent"
+	"github.com/makesalekz/agents/internal/biz"
+	"github.com/makesalekz/agents/internal/data"
+	utils_v1 "github.com/makesalekz/utils/api/utils/v1"
+	"github.com/makesalekz/utils/v2/auth"
 
 	"github.com/shopspring/decimal"
 )

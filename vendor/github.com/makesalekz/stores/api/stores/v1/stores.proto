@@ -5,7 +5,7 @@ package stores.v1;
 import "api/utils/v1/models.proto";
 import "api/stores/v1/models.proto";
 
-option go_package = "gitlab.calendaria.team/services/stores/api/stores/v1;stores_v1";
+option go_package = "github.com/makesalekz/stores/api/stores/v1;stores_v1";
 option java_multiple_files = true;
 option java_package = "stores.v1";
 

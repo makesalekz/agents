@@ -443,7 +443,7 @@ const file_api_utils_v1_models_proto_rawDesc = "" +
 	"\a_toDateB\f\n" +
 	"\n" +
 	"_fromLabelBI\n" +
-	"\butils.v1P\x01Z;gitlab.calendaria.team/services/utils/api/utils/v1;utils_v1b\x06proto3"
+	"\butils.v1P\x01Z;github.com/makesalekz/utils/api/utils/v1;utils_v1b\x06proto3"
 
 var (
 	file_api_utils_v1_models_proto_rawDescOnce sync.Once

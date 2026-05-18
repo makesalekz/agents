@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package agents.v1;
 
-option go_package = "gitlab.calendaria.team/services/agents/api/agents/v1;agents_v1";
+option go_package = "github.com/makesalekz/agents/api/agents/v1;agents_v1";
 
 import "api/agents/v1/models.proto";
 import "api/utils/v1/models.proto";
