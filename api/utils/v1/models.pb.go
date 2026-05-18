@@ -442,8 +442,8 @@ const file_api_utils_v1_models_proto_rawDesc = "" +
 	"\t_fromDateB\t\n" +
 	"\a_toDateB\f\n" +
 	"\n" +
-	"_fromLabelBI\n" +
-	"\butils.v1P\x01Z;github.com/makesalekz/utils/api/utils/v1;utils_v1b\x06proto3"
+	"_fromLabelB?\n" +
+	"\butils.v1P\x01Z1github.com/makesalekz/utils/api/utils/v1;utils_v1b\x06proto3"
 
 var (
 	file_api_utils_v1_models_proto_rawDescOnce sync.Once
