@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package stores.v1;
+
+import "api/utils/v1/models.proto";
+
+option go_package = "gitlab.calendaria.team/services/stores/api/stores/v1;stores_v1";
+option java_multiple_files = true;
+option java_package = "stores.v1";
+
+message Store {
+  int64 id = 1;
+  int64 tenant_id = 2;
+  string name = 3;
+  string address = 4;
+  optional double lat = 5;
+  optional double lon = 6;
+  string phone = 7;
+  string work_hours = 8;
+  bool is_active = 9;
+  optional int64 responsible_id = 10;
+  string created_at = 11;
+  string updated_at = 12;
+}
